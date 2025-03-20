@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .storybook-button {
   display: inline-block;
   cursor: pointer;
@@ -5,10 +7,10 @@
   border-radius: 3em;
   font-weight: 700;
   line-height: 1;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .storybook-button--primary {
-  background-color: #555ab9;
+  @apply bg-blue-600;
   color: white;
 }
 .storybook-button--secondary {
