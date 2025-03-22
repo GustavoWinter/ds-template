@@ -1,4 +1,8 @@
 import type { Preview } from "@storybook/web-components";
+import {
+  INITIAL_VIEWPORTS,
+  MINIMAL_VIEWPORTS,
+} from "@storybook/addon-viewport";
 
 const preview: Preview = {
   parameters: {
@@ -19,6 +23,28 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    viewport: {
+      viewports: {
+        ...MINIMAL_VIEWPORTS,
+        ...INITIAL_VIEWPORTS,
+        customDesktop: {
+          name: "Desktop (1280x720)",
+          styles: {
+            width: "1280px",
+            height: "720px",
+          },
+        },
+        largeDesktop: {
+          name: "Large Desktop (1920x1080)",
+          styles: {
+            width: "1920px",
+            height: "1080px",
+          },
+        },
+      },
+      defaultViewport: "responsive",
+    },
+    layout: "fullscreen",
   },
 };
 
