@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.nav--link {
+  @apply flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 text-center hover:text-green-600;
+}
+
+.nav--link--hover-bg {
+  @apply hover:bg-gray-50;
+}
+
+.nav--link--small {
+  @apply text-xs;
+}
+
+.nav--link--medium {
+  @apply text-sm;
+}
+
+.nav--link--large {
+  @apply text-lg;
+}

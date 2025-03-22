@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+.td__base {
+  @apply text-sm whitespace-nowrap text-gray-500;
+}
+
+.td__align-left {
+  @apply text-left;
+}
+
+.td__align-center {
+  @apply text-center;
+}
+
+.td__align-right {
+  @apply text-right;
+}
+
+.td__size-small {
+  @apply text-xs;
+}
+
+.td__size-medium {
+  @apply text-sm;
+}
+
+.td__size-large {
+  @apply text-lg;
+}
+
+.td__weight-normal {
+  @apply font-normal;
+}
+
+.td__weight-semibold {
+  @apply font-semibold;
+}
+
+.td__weight-bold {
+  @apply font-bold;
+}
