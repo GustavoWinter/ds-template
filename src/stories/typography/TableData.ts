@@ -1,6 +1,6 @@
 import { html } from "lit";
 
-import "./tableheader.css";
+import "./tabledata.css";
 
 export interface TableDataProps {
   text: string;
@@ -12,7 +12,7 @@ export interface TableDataProps {
 export const TableData = ({
   text,
   align = "left",
-  size = "medium",
+  size = "large",
   weight = "normal",
 }: TableDataProps) => {
   const alignClass = `td__align-${align}`;

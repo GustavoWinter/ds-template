@@ -7,6 +7,20 @@ const meta = {
   component: "TableHeader",
   tags: ["autodocs"],
   render: (args) => TableHeader(args),
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    weight: {
+      control: "select",
+      options: ["normal", "semibold", "bold"],
+    },
+    align: {
+      control: "select",
+      options: ["left", "center", "right"],
+    },
+  },
 } satisfies Meta<TableHeaderProps>;
 
 export default meta;
@@ -14,7 +28,7 @@ type Story = StoryObj<TableHeaderProps>;
 
 export const Default: Story = {
   args: {
-    text: "Default Header",
+    text: "Table Header",
     align: "left",
     size: "medium",
     weight: "normal",
@@ -23,8 +37,7 @@ export const Default: Story = {
 
 export const Small: Story = {
   args: {
-    text: "Small Header",
-    align: "left",
+    ...Default.args,
     size: "small",
     weight: "semibold",
   },
@@ -32,8 +45,7 @@ export const Small: Story = {
 
 export const Large: Story = {
   args: {
-    text: "Large Header",
-    align: "left",
+    ...Default.args,
     size: "large",
     weight: "semibold",
   },
@@ -41,8 +53,7 @@ export const Large: Story = {
 
 export const Bold: Story = {
   args: {
-    text: "Bold Header",
-    align: "left",
+    ...Default.args,
     size: "medium",
     weight: "bold",
   },

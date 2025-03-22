@@ -7,6 +7,15 @@ const meta = {
   component: "NavLink",
   tags: ["autodocs"],
   render: (args) => NavLink(args),
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    hoverBg: {
+      control: "boolean",
+    },
+  },
 } satisfies Meta<NavLinkProps>;
 
 export default meta;
@@ -23,35 +32,28 @@ export const Default: Story = {
 
 export const Small: Story = {
   args: {
-    text: "Home",
-    href: "#",
+    ...Default.args,
     size: "small",
-    hoverBg: true,
   },
 };
 
 export const Medium: Story = {
   args: {
-    text: "Home",
-    href: "#",
+    ...Default.args,
     size: "medium",
-    hoverBg: true,
   },
 };
 
 export const Large: Story = {
   args: {
-    text: "Home",
-    href: "#",
+    ...Default.args,
     size: "large",
-    hoverBg: true,
   },
 };
 
 export const NoHoverBg: Story = {
   args: {
-    text: "Home",
-    href: "#",
+    ...Default.args,
     size: "medium",
     hoverBg: false,
   },

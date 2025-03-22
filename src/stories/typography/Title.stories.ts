@@ -7,6 +7,12 @@ const meta = {
   component: "Title",
   tags: ["autodocs"],
   render: (args) => Title(args),
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+  },
 } satisfies Meta<TitleProps>;
 
 export default meta;
@@ -14,28 +20,28 @@ type Story = StoryObj<TitleProps>;
 
 export const Default: Story = {
   args: {
-    text: "This is a default heading",
+    text: "This is a default heading <h1>",
     size: "medium",
   },
 };
 
 export const Small: Story = {
   args: {
-    text: "This is a small heading",
+    ...Default.args,
     size: "small",
   },
 };
 
 export const Medium: Story = {
   args: {
-    text: "This is a medium heading",
+    ...Default.args,
     size: "medium",
   },
 };
 
 export const Large: Story = {
   args: {
-    text: "This is a large heading",
+    ...Default.args,
     size: "large",
   },
 };

@@ -7,6 +7,20 @@ const meta = {
   component: "TableData",
   tags: ["autodocs"],
   render: (args) => TableData(args),
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    weight: {
+      control: "select",
+      options: ["normal", "semibold", "bold"],
+    },
+    align: {
+      control: "select",
+      options: ["left", "center", "right"],
+    },
+  },
 } satisfies Meta<TableDataProps>;
 
 export default meta;
@@ -14,7 +28,7 @@ type Story = StoryObj<TableDataProps>;
 
 export const Default: Story = {
   args: {
-    text: "Default Data",
+    text: "Table Data",
     align: "left",
     size: "medium",
     weight: "normal",
@@ -23,8 +37,7 @@ export const Default: Story = {
 
 export const Small: Story = {
   args: {
-    text: "Small Data",
-    align: "left",
+    ...Default.args,
     size: "small",
     weight: "normal",
   },
@@ -32,8 +45,7 @@ export const Small: Story = {
 
 export const Large: Story = {
   args: {
-    text: "Large Data",
-    align: "left",
+    ...Default.args,
     size: "large",
     weight: "normal",
   },
@@ -41,8 +53,7 @@ export const Large: Story = {
 
 export const Bold: Story = {
   args: {
-    text: "Bold Data",
-    align: "left",
+    ...Default.args,
     size: "medium",
     weight: "bold",
   },
