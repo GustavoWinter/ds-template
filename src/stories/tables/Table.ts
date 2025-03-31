@@ -18,7 +18,7 @@ export interface Customer {
 @customElement("ds-table")
 export class DsTable extends LitElement {
   createRenderRoot() {
-    return this; // Render in the light DOM
+    return this; // TODO: Use shadow DOM for encapsulation this approach apply LIGHT DOM styles
   }
 
   @property({ type: Array }) customers: Customer[] = [];

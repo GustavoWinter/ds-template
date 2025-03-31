@@ -14,8 +14,7 @@ This project is a Design System template of web components designed for use in v
   - [Typescript](#typescript)
   - [GitHub Actions](#github-actions)
 - [How Everything Works Together](#how-everything-works-together)
-- [An Unexpected Detail](#an-unexpected-detail)
-- [Regression Test and CI/CD](#regression-test-and-cicd)
+- [Regression Test](#regression-test)
 - [Running the Application](#running-the-application)
 
 ### Technologies Explained
@@ -44,9 +43,7 @@ Below, is a brief explanation about each technology in simple terms, focusing on
 
 Developers write component code and stories, use Storybook locally to see and test them, build with Vite for production, and test with Playwright for functionality and visuals. GitHub Actions automates this, running tests on every code change to keep quality high.
 
-### An Unexpected Detail
-
-An unexpected benefit is that Playwright can test across different browsers, ensuring your components look the same everywhere, which is crucial for web applications used globally.
+Playwright can test across different browsers, ensuring your components look the same everywhere, which is crucial for web applications used globally.
 
 # Regression Test
 
