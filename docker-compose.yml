@@ -1,0 +1,46 @@
+volumes:
+  storybook_static:
+
+services:
+  storybook_build:
+    build:
+      context: .
+      dockerfile: Dockerfile.storybook_build
+    volumes:
+      - .:/app
+      - storybook_static:/app/storybook-static
+    command: npx --yes storybook build -o storybook-static
+
+  static_server:
+    image: httpd:2.4
+    volumes:
+      - storybook_static:/usr/local/apache2/htdocs/
+    ports:
+      - "8080:80"
+    depends_on:
+      storybook_build:
+        condition: service_completed_successfully
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - TEST_BASE_URL=${TEST_BASE_URL}
+      - CI=true
+    volumes:
+      - .:/app
+    depends_on:
+      - static_server
+    command: ["npx", "playwright", "test"]
+
+  storybook_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.storybook_build
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "6006:6006"
+    command: npm run storybook -- --ci

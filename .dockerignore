@@ -1,0 +1,10 @@
+storybook-static/
+tests/__screenshots__/
+playwright-report/
+test-results/
+.git/
+.gitignore
+Dockerfile*
+docker-compose.yml
+*.log
+.env
