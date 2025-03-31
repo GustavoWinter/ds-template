@@ -1,19 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/web-components";
-
-import type { TableProps } from "./Table";
-import { Table } from "./Table";
-import { NavLinkProps } from "../typography/NavLink";
 import { html } from "lit";
+import "./Table"; // Import the ds-table component
+import { NavLinkProps } from "../typography/NavLink";
 
 const meta = {
-  component: "Table",
+  component: "ds-table",
   tags: ["autodocs"],
-  render: (args) => Table(args),
+  render: (args) => html`
+    <ds-table
+      .customers="${args.customers}"
+      .navLinks="${args.navLinks}"
+    ></ds-table>
+  `,
   decorators: [(Story) => html`<div class="py-5 px-12">${Story()}</div>`],
-} satisfies Meta<TableProps>;
+} satisfies Meta;
 
 export default meta;
-type Story = StoryObj<TableProps>;
+type Story = StoryObj;
 
 export const Default: Story = {
   args: {
