@@ -4,7 +4,7 @@ import "./button.css";
 
 export interface ButtonProps {
   label: string;
-  onClick?: () => void;
+  onClick: () => void;
   variant?: "primary" | "secondary";
   size?: "small" | "medium" | "large";
 }

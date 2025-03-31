@@ -1,7 +1,5 @@
 import { fn } from "@storybook/test";
-
 import type { Meta, StoryObj } from "@storybook/web-components";
-
 import type { ButtonProps } from "./Button";
 import { Button } from "./Button";
 
@@ -9,7 +7,6 @@ const meta = {
   component: "ds-btn",
   tags: ["autodocs"],
   render: (args) => Button(args),
-  args: { onClick: fn() },
   argTypes: {
     size: {
       control: "select",
@@ -30,6 +27,10 @@ export const Default: Story = {
     label: "Submit",
     variant: "primary",
     size: "medium",
+    onClick: () => {
+      fn();
+      document.body.setAttribute("data-button-clicked", "Button Clicked");
+    },
   },
 };
 

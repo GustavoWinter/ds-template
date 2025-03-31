@@ -7,8 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
+# Build artifacts
+storybook-static/
+build/
+node_modules/
+dist/
 dist-ssr
 *.local
 
@@ -24,3 +27,16 @@ dist-ssr
 *.sw?
 
 *storybook.log
+
+# Playwright
+tests/__screenshots__/
+tests/screenshots-baseline/
+tests/visual.spec.ts-snapshots/
+test-results/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+
+
