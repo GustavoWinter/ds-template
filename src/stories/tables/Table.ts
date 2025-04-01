@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { property } from "lit/decorators.js";
 import { customElement } from "lit/decorators.js";
 import { TableHeader } from "../typography/TableHeader";
